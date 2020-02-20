@@ -36,6 +36,9 @@ public class LexemItem {
 
     @Override
     public String toString() {
+        if(lexem.contains("\n")){
+            lexem = "\\n";
+        }
         return "LexemItem {" +
                 " stringNum = " + stringNum +
                 ", \tlexem = '" + lexem + '\'' +

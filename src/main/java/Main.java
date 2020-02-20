@@ -10,7 +10,7 @@ public class Main {
         var s = "";
         int i;
         try {
-            var fr = new FileReader("./resource/MyProgram.mylang");
+            var fr = new FileReader("./langFiles/MyProgram.mylang");
             while((i = fr.read()) != -1){
                 s = s + (char) i;
             }
