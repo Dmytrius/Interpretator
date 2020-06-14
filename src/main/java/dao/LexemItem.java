@@ -1,3 +1,5 @@
+package dao;
+
 public class LexemItem {
 
     private int stringNum;
@@ -39,7 +41,7 @@ public class LexemItem {
         if(lexem.contains("\n")){
             lexem = "\\n";
         }
-        return "LexemItem {" +
+        return "Item {" +
                 " stringNum = " + stringNum +
                 ", \tlexem = '" + lexem + '\'' +
                 ", \tdescription = '" + description + '\'' +

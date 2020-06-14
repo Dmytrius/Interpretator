@@ -1,3 +1,5 @@
+package dao;
+
 public class Token {
 
     private final String text;
