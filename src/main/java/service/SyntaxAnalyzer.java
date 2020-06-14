@@ -35,4 +35,20 @@ public class SyntaxAnalyzer {
         }
         return lexems;
     }
+
+    public LinkedList<LexemItem> deletedComments(LinkedList<LexemItem> lexems) {
+        int index = 0;
+        for(int i = 0; i < lexems.size(); i++) {
+            if (lexems.get(i).getDescription().equals("COMMENT")) {
+                index = lexems.get(i).getStringNum();
+                System.out.println(index);
+            }
+            for(int j = 0; j < lexems.size(); j++) {
+                if(lexems.get(j).getStringNum() == index) {
+                    lexems.remove(j);
+                }
+            }
+        }
+        return lexems;
+    }
 }

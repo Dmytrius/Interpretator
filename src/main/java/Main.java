@@ -33,7 +33,8 @@ public class Main {
 //        }
         System.out.println("------------------------SYNTAX------------------------");
         var syntaxes = new SyntaxAnalyzer(lexems);
-        syntaxes.getClearTextProgram(lexems);
+        syntaxes.getClearTextProgram(lexems); // deleted before program & past end
+        syntaxes.deletedComments(lexems);  // deleted comments
         for(int j =0; j < lexems.size(); j ++){
             System.out.println(lexems.get(j).toString());
         }
