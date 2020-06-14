@@ -6,6 +6,7 @@ import service.RegexTokenizer;
 import service.SyntaxAnalyzer;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
@@ -41,16 +42,16 @@ public class Main {
             System.out.println(lexems.get(j).toString());
         }
 
-        List<LexemItem> loopList = new LinkedList<LexemItem>();
-        loopList = syntaxes.getLoop(lexems); //get loop
+        List<LexemItem> loopList;
+        loopList = syntaxes.getLoop((LinkedList<LexemItem>) lexems.clone()); //get loop
 
         System.out.println("------------------------LOOP------------------------");
         for(int j =0; j < loopList.size(); j ++){
             System.out.println(loopList.get(j).toString());
         }
 
-        List<LexemItem> ifStatment = new LinkedList<LexemItem>();
-        ifStatment = syntaxes.getIfStatment(lexems); //get if statment
+        List<LexemItem> ifStatment;
+        ifStatment = syntaxes.getIfStatment((LinkedList<LexemItem>) lexems.clone()); //get if statment
         System.out.println("------------------------IFSTATMENT------------------------");
         for(int j =0; j < ifStatment.size(); j ++){
             System.out.println(ifStatment.get(j).toString());
