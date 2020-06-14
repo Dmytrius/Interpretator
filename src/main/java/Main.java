@@ -28,15 +28,33 @@ public class Main {
                     new LexemItem(stringNum,token.getText(), token.getType().toString()));
             index++;
         }
-//        for(int j =0; j < lexems.size(); j ++){
-//            System.out.println(lexems.get(j).toString());
-//        }
-        System.out.println("------------------------SYNTAX------------------------");
-        var syntaxes = new SyntaxAnalyzer(lexems);
-        syntaxes.getClearTextProgram(lexems); // deleted before program & past end
-        syntaxes.deletedComments(lexems);  // deleted comments
+        System.out.println("------------------------LEXEM ANALYZE------------------------");
         for(int j =0; j < lexems.size(); j ++){
             System.out.println(lexems.get(j).toString());
         }
+        var syntaxes = new SyntaxAnalyzer(lexems);
+        syntaxes.getClearTextProgram(lexems); // deleted before program & past end
+        syntaxes.deletedComments(lexems);  // deleted comments
+
+        System.out.println("------------------------SYNTAX ANALYZE------------------------");
+        for(int j =0; j < lexems.size(); j ++){
+            System.out.println(lexems.get(j).toString());
+        }
+
+        List<LexemItem> loopList = new LinkedList<LexemItem>();
+        loopList = syntaxes.getLoop(lexems); //get loop
+
+        System.out.println("------------------------LOOP------------------------");
+        for(int j =0; j < loopList.size(); j ++){
+            System.out.println(loopList.get(j).toString());
+        }
+
+        List<LexemItem> ifStatment = new LinkedList<LexemItem>();
+        ifStatment = syntaxes.getIfStatment(lexems); //get if statment
+        System.out.println("------------------------IFSTATMENT------------------------");
+        for(int j =0; j < ifStatment.size(); j ++){
+            System.out.println(ifStatment.get(j).toString());
+        }
+
     }
 }
