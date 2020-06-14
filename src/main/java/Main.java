@@ -1,27 +1,21 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
+import dao.LexemItem;
+import dao.Lexems;
+import dao.Token;
+import service.Reader;
+import service.RegexTokenizer;
+import service.SyntaxAnalyzer;
+
+import java.util.LinkedList;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        var s = "";
-        int i;
-        try {
-            var fr = new FileReader("./langFiles/MyProgram.mylang");
-            while((i = fr.read()) != -1){
-                s = s + (char) i;
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException ex){
-            ex.printStackTrace();
-        }
+        String link = "./langFiles/MyProgram.mylang";
+        String reader = new Reader(link).read();
 
-        var lexems = new HashMap<Integer, LexemItem>();
-        var tokenizer = new RegexTokenizer(s, Lexems.values());
+        var lexems = new LinkedList<LexemItem>();
+        var tokenizer = new RegexTokenizer(reader, Lexems.values());
         int stringNum = 1;
         int index = 0;
         while (tokenizer.hasMoreElements()) {
@@ -29,13 +23,19 @@ public class Main {
             if(token.getType() == Lexems.NEWROW){
                 stringNum++;
             }
-            lexems.put(
+            lexems.add(
                     index,
                     new LexemItem(stringNum,token.getText(), token.getType().toString()));
             index++;
         }
-        lexems.entrySet().forEach(entry ->{
-            System.out.println(entry.getValue().toString());
-        });
+//        for(int j =0; j < lexems.size(); j ++){
+//            System.out.println(lexems.get(j).toString());
+//        }
+        System.out.println("------------------------SYNTAX------------------------");
+        var syntaxes = new SyntaxAnalyzer(lexems);
+        syntaxes.getClearTextProgram(lexems);
+        for(int j =0; j < lexems.size(); j ++){
+            System.out.println(lexems.get(j).toString());
+        }
     }
 }
