@@ -1,7 +1,5 @@
 package dao;
 
-import dao.ITokenType;
-
 public enum Lexems implements ITokenType {
 
     KEYWORD("\\b(?:program|end|true|false|if|then|else|for|rof|to|by)\\b"),
@@ -12,7 +10,7 @@ public enum Lexems implements ITokenType {
     CHAR("'[^']*'"),
     WHITESPACE("\\s+"),
     COMMENT("\\-\\-[^\\n\\r]*"),
-    SYMBOLS("[+\\-\\--\\[\\]\\*/.=\\(\\)]");
+    SYMBOLS("[+\\-\\--\\[\\]\\*/.=\\(\\)\\^]");
 
     private final String regex;
 

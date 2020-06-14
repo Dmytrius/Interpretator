@@ -11,15 +11,12 @@ boolean
 -- begin loop
 for<i=0 to i=10 by i++>
     number = number + 1
+    -- begin if-statement
+    if<realNumber1 > realNumber2>
+        then < realNumber1 = realNumber2 + realNumber3 >
+        else < realNumber1 = realNumber2 ^ 2 >
+    fi
 rof
-
--- begin if-statement
-if<realNumber1 > realNumber2>
-    then < realNumber1 = realNumber2 + realNumber3 >
-    else < realNumber1 = realNumber2^2 >
-fi
 
 end
 
-
-vgh;uisdhv;uisdh
