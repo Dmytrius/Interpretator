@@ -1,3 +1,4 @@
+osakihjvgfoiswdhvgoisw
 program
 testNumber = 10
 testChar = 'S'
@@ -8,13 +9,16 @@ testBoolean
  = true
 
 -- begin loop
-for<i=0 to i=10 by i++>[
+for<i=0 to i=10 by i++>
     age = age + 1
 
     -- begin if-statement
     if<age == ident>
         then<ident = ident + 1>
         else<ident = ident - 1 >
-]
+rof
 
 end
+
+
+vgh;uisdhv;uisdh
