@@ -1,6 +1,10 @@
+package dao;
+
+import dao.ITokenType;
+
 public enum Lexems implements ITokenType {
 
-    KEYWORD("\\b(?:program|end|true|false|if|then|else|for|to|by)\\b"),
+    KEYWORD("\\b(?:program|end|true|false|if|then|else|for|rof|to|by)\\b"),
     IDENTIFICATOR("[a-z][A-Za-z0-9]*"),
     NEWROW("\n"),
     REAL_NUMBER("[0-9]*\\.[0-9]*"),
