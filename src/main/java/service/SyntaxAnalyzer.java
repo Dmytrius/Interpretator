@@ -41,7 +41,6 @@ public class SyntaxAnalyzer {
         for(int i = 0; i < lexems.size(); i++) {
             if (lexems.get(i).getDescription().equals("COMMENT")) {
                 index = lexems.get(i).getStringNum();
-                System.out.println(index);
             }
             for(int j = 0; j < lexems.size(); j++) {
                 if(lexems.get(j).getStringNum() == index) {
@@ -50,5 +49,25 @@ public class SyntaxAnalyzer {
             }
         }
         return lexems;
+    }
+
+    public List<LexemItem> getLoop(LinkedList<LexemItem> list) {
+        while(!list.getFirst().getLexem().equals("for")){
+            getClearFirstText(list, "for");
+        }
+        while(!list.getLast().getLexem().equals("rof")){
+            getClearLastText(list, "rof");
+        }
+        return list;
+    }
+
+    public List<LexemItem> getIfStatment(LinkedList<LexemItem> list) {
+        while(!list.getFirst().getLexem().equals("if")){
+            getClearFirstText(list, "if");
+        }
+        while(!list.getLast().getLexem().equals("fi")){
+            getClearLastText(list, "fi");
+        }
+        return list;
     }
 }
