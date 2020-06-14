@@ -1,22 +1,23 @@
 osakihjvgfoiswdhvgoisw
 program
-testNumber = 10
-testChar = 'S'
-testRealNumber1 = 18.2
-testRealNumber2=9.
-testRealNumber3 = .3
-testBoolean
+char = 'S'
+number = 10
+realNumber1 = 18.2
+realNumber2=9.
+realNumber3 = .3
+boolean
  = true
 
 -- begin loop
 for<i=0 to i=10 by i++>
-    age = age + 1
-
-    -- begin if-statement
-    if<age == ident>
-        then<ident = ident + 1>
-        else<ident = ident - 1 >
+    number = number + 1
 rof
+
+-- begin if-statement
+if<realNumber1 > realNumber2>
+    then < realNumber1 = realNumber2 + realNumber3 >
+    else < realNumber1 = realNumber2^2 >
+fi
 
 end
 
