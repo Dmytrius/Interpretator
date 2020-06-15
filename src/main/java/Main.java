@@ -58,14 +58,20 @@ public class Main {
             System.out.println(ifStatment.get(j).toString());
         }
 
+        System.out.println("------------------------POLIZ FOR STATMENT------------------------");
+        var polizFORStatment = new LinkedList<LexemItem>();
+        var polizFOR = new POLIZAnalyzer((LinkedList<LexemItem>) loopList);
+        polizFORStatment = polizFOR.getPoliz((LinkedList<LexemItem>) loopList);
+        for(int i = 0;i < polizFORStatment.size();i++){
+            System.out.println(polizFORStatment.get(i).toString());
+        }
+
         System.out.println("------------------------POLIZ IF STATMENT------------------------");
         var polizIfStatment = new LinkedList<LexemItem>();
         var polizIF = new POLIZAnalyzer((LinkedList<LexemItem>) ifStatment);
-        polizIfStatment = polizIF.getPolizIFS((LinkedList<LexemItem>) ifStatment);
-        int i = 0;
-        while(i < polizIfStatment.size()){
+        polizIfStatment = polizIF.getPoliz((LinkedList<LexemItem>) ifStatment);
+        for (int i=0; i < polizIfStatment.size();i++){
             System.out.println(polizIfStatment.get(i).toString());
-            i++;
         }
     }
 }

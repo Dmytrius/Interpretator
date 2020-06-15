@@ -12,7 +12,7 @@ public class POLIZAnalyzer {
     }
 
 
-    public LinkedList<LexemItem> getPolizIFS(LinkedList<LexemItem> list) {
+    public LinkedList<LexemItem> getPoliz(LinkedList<LexemItem> list) {
         LinkedList<LexemItem> stack = new LinkedList<LexemItem>();
         LinkedList<LexemItem> out = new LinkedList<LexemItem>();
         while (!list.isEmpty()){
@@ -42,9 +42,6 @@ public class POLIZAnalyzer {
                     break;
             }
         }
-//        for(int j =0; j < out.size(); j ++){
-//            System.out.println(out.get(j).toString());
-//        }
         return out;
     }
 }
