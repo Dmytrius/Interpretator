@@ -1,6 +1,7 @@
 import dao.LexemItem;
 import dao.Lexems;
 import dao.Token;
+import service.POLIZAnalyzer;
 import service.Reader;
 import service.RegexTokenizer;
 import service.SyntaxAnalyzer;
@@ -57,5 +58,14 @@ public class Main {
             System.out.println(ifStatment.get(j).toString());
         }
 
+        System.out.println("------------------------POLIZ IF STATMENT------------------------");
+        var polizIfStatment = new LinkedList<LexemItem>();
+        var polizIF = new POLIZAnalyzer((LinkedList<LexemItem>) ifStatment);
+        polizIfStatment = polizIF.getPolizIFS((LinkedList<LexemItem>) ifStatment);
+        int i = 0;
+        while(i < polizIfStatment.size()){
+            System.out.println(polizIfStatment.get(i).toString());
+            i++;
+        }
     }
 }
